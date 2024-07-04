@@ -2,28 +2,33 @@
 #include <stdlib.h>
 #include <time.h>
 
-const char* coin_toss() {
-    return rand() % 2 == 0 ? "Heads" : "Tails";
-}
-
 int main() {
-    int heads_count = 0;
-    int tails_count = 0;
-    
-    srand(time(NULL));
+    char name[20];
+    int heads = 0, tails = 0;
 
+    printf("Who are you?\n> ");
+    scanf("%s", name);
+    printf("Hello, %s!\n", name);
+
+    srand(time(NULL));
     printf("Tossing a coin...\n");
-    for (int round_number = 1; round_number <= 3; round_number++) {
-        const char* result = coin_toss();
-        printf("Round %d: %s\n", round_number, result);
-        if (result == "Heads") {
-            heads_count++;
+    for (int i = 1; i <= 3; i++) {
+        int toss = rand() % 2;
+        if (toss == 0) {
+            printf("Round %d: Heads\n", i);
+            heads++;
         } else {
-            tails_count++;
+            printf("Round %d: Tails\n", i);
+            tails++;
         }
     }
-    
-    printf("Heads: %d, Tails: %d\n", heads_count, tails_count);
-    
+
+    printf("Heads: %d, Tails: %d\n", heads, tails);
+    if (heads > tails) {
+        printf("You won!\n");
+    } else {
+        printf("You lost\n");
+    }
+
     return 0;
 }

@@ -1,0 +1,14 @@
+(x, y) = (8, 5)
+(x, y) = (8, 5)
+
+
+In Java, when passing arguments to methods, in the case of primitive data types, their values are passed by copying. 
+This means that a new variable is created, the value is copied to it, and this copy is used within the method. 
+Therefore, even if the value of the argument is changed within the method, it does not affect the original variable.
+In detail, in the test() method, the values of x and y are initialized to 8 and 5 respectively, and when the movePoint() method is called, these values are copied. 
+Then, within the movePoint() method, even though x is changed to 100 and y to 120, this only affects the copied values. No changes are made to the original variables x and y.
+
+
+
+
+

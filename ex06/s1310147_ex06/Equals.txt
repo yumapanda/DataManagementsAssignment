@@ -1,0 +1,1 @@
+Because the comparison of references and the comparison of object contents are done in different ways in Java.
